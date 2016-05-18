@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="static/js/jquery-1.11.3.min.js"></script>
+    <script src="static/js/bootstrap-3.3.6.min.js"></script>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap-theme.min.css" rel="stylesheet">
+    <title>员工满意度问卷</title>
+
+<style type="text/css">
+p {
+    text-indent: 2em;
+}
+
+.noindent {
+    text-indent: 0em;
+}
+
+li {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+.line-input {
+	   border-bottom:#666 2px solid;
+	   border-left-width:0px;
+	   border-right-width:0px;
+	   border-top-width:0px;
+       width: 80%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;;
+}
+
+.h4 {
+    margin-top: 20px;
+}
+
+tr > th {
+    text-align: center;
+}
+
+table {
+    table-layout: fixed;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2"></div>
+        <div class="col-xs-8 col-sm-8 col-md-8">
+
+<div class="page-header text-center">
+   <h1>员工满意度调查问卷</h1>
+</div>
+
+<form action="/submit" method="post">
+
+<p class="noindent">尊敬的XXX公司的全体员工:<p>
+<p>让员工共同参与XXX的企业凝聚力和公司归属感的建设是XXX的一个管理方向。为此，XXX股份有限公司委托YY咨询公司实施全员的满意度调查。
+您将被邀请参加XXX员工满意度调查。完成调查只需要您大约15分钟的时间。这个调查会问你一些关于你的工作的问题，请你表达你的意见。你的个人回答将得到保密。没有你的同意YY公司将不会把您的个人回答报告给你的经理或人事部门。
+我们希望您积极参与。YY唯有在您完成问卷后才能帮助您的公司更好地了解员工意见和态度。谢谢！
+</p>
+
+<h3>基本信息</h3>
+<ul>
+<li>S1.</li> 您的年龄：<input type="text" class="line-input" name="s1">岁。<br />
+<li>S2.</li> 性别
+<div class="radio">
+   <label><input type="radio" name="s2" id="s21" value="1">1. 男</label>
+   <label><input type="radio" name="s2" id="s22" value="2">2. 女</label>
+</div>
+<li>S4.</li>您在XXX的在职时间？（包括在不同分子公司的累计在职时间。）
+<div class="radio">
+   <label><input type="radio" name="s4" id="s41" value="1">1. 3个月及以下</label>
+   <label><input type="radio" name="s4" id="s42" value="2">2. 3个月到1年</label>
+   <label><input type="radio" name="s4" id="s43" value="3">3. 1年到3年</label>
+   <label><input type="radio" name="s4" id="s44" value="4">4. 3年到5年</label>
+   <label><input type="radio" name="s4" id="s45" value="5">5. 5年及以上</label>
+</div>
+<li>S7.</li>
+您目前所在的部门：<input class="line-input" type="text" name="s7">。<br />
+</ul>
+
+<h3>主体问卷</h3>
+<p>请您对用5分制评价以下问题，5分代表非常同意，4分代表比较同意，3分代表一般，2分代表比较不同意，1分代表非常不同意。</p>
+
+<h4>A. 工作评价</h4>
+<li></li>对于以下问题，您的同意程度如何呢？
+<table class="table table-bordered text-center">
+   <thead>
+      <tr>
+          <th></th>
+          <th>非常同意</th>
+          <th>比较同意</th>
+          <th>一般</th>
+          <th>比较不同意</th>
+          <th>非常不同意</th>
+          <th>不知道</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td class="text-left">A1. 我目前从事的工作符合我的职业发展目标</td>
+         <td><label><input type="radio" name="a1" id="a11" value="5">5</label></td>
+         <td><label><input type="radio" name="a1" id="a12" value="4">4</label></td>
+         <td><label><input type="radio" name="a1" id="a13" value="3">3</label></td>
+         <td><label><input type="radio" name="a1" id="a14" value="2">2</label></td>
+         <td><label><input type="radio" name="a1" id="a15" value="1">1</label></td>
+         <td><label><input type="radio" name="a1" id="a16" value="9">9</label></td>
+      </tr>
+      <tr>
+         <td class="text-left">A2. 我能清楚的了解部门领导对我的期望和要求</td>
+         <td><label><input type="radio" name="a2" id="a21" value="5">5</label></td>
+         <td><label><input type="radio" name="a2" id="a22" value="4">4</label></td>
+         <td><label><input type="radio" name="a2" id="a23" value="3">3</label></td>
+         <td><label><input type="radio" name="a2" id="a24" value="2">2</label></td>
+         <td><label><input type="radio" name="a2" id="a25" value="1">1</label></td>
+         <td><label><input type="radio" name="a2" id="a26" value="9">9</label></td>
+      </tr>
+   </tbody>
+</table>
+<h4>B. 培训与职业发展</h4>对于以下问题，您的同意程度如何呢？
+<table class="table table-bordered text-center">
+   <thead>
+      <tr>
+          <th></th>
+          <th>非常同意</th>
+          <th>比较同意</th>
+          <th>一般</th>
+          <th>比较不同意</th>
+          <th>非常不同意</th>
+          <th>不知道</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td class="text-left">B1. 我可以从工作中可以学习到很多东西，如专业知识、管理知识</td>
+         <td><label><input type="radio" name="b1" id="b11" value="5">5</label></td>
+         <td><label><input type="radio" name="b1" id="b12" value="4">4</label></td>
+         <td><label><input type="radio" name="b1" id="b13" value="3">3</label></td>
+         <td><label><input type="radio" name="b1" id="b14" value="2">2</label></td>
+         <td><label><input type="radio" name="b1" id="b15" value="1">1</label></td>
+         <td><label><input type="radio" name="b1" id="b16" value="9">9</label></td>
+      </tr>
+      <tr>
+         <td class="text-left">B2. 直接领导能及时指出我在工作中的不足和错误，并能提出改进建议</td>
+         <td><label><input type="radio" name="b2" id="b21" value="5">5</label></td>
+         <td><label><input type="radio" name="b2" id="b22" value="4">4</label></td>
+         <td><label><input type="radio" name="b2" id="b23" value="3">3</label></td>
+         <td><label><input type="radio" name="b2" id="b24" value="2">2</label></td>
+         <td><label><input type="radio" name="b2" id="b25" value="1">1</label></td>
+         <td><label><input type="radio" name="b2" id="b26" value="9">9</label></td>
+      </tr>
+      <tr>
+         <td class="text-left">B3. 公司有足够的培训机会</td>
+         <td><label><input type="radio" name="b3" id="b31" value="5">5</label></td>
+         <td><label><input type="radio" name="b3" id="b32" value="4">4</label></td>
+         <td><label><input type="radio" name="b3" id="b33" value="3">3</label></td>
+         <td><label><input type="radio" name="b3" id="b34" value="2">2</label></td>
+         <td><label><input type="radio" name="b3" id="b35" value="1">1</label></td>
+         <td><label><input type="radio" name="b3" id="b36" value="9">9</label></td>
+      </tr>
+   </tbody>
+</table>
+<li></li>G1. 我的收入主要用于：【多选】
+<div>
+   <p><label class="checkbox"><input type="checkbox" name="g1" id="g11" value="1">1. 日常生活开支</label></p>
+   <p><label class="checkbox"><input type="checkbox" name="g1" id="g12" value="2">2. 租房/买房</label></p>
+   <p><label class="checkbox"><input type="checkbox" name="g1" id="g13" value="3">3. 教育</label></p>
+   <p><label class="checkbox"><input type="checkbox" name="g1" id="g14" value="4">4. 旅游</label></p>
+   <p><label class="checkbox"><input type="checkbox" name="g1" id="g15" value="5">5. 存款</label></p>
+   <p><label class="checkbox"><input type="checkbox" name="g1" id="g16" value="6">6. 其他</label></p>
+</div>
+
+<h4>H. 整体评价</h4>
+
+<li>H1.</li>请问，综合上述各方面考虑，您对于XXX公司作为您的工作单位总体满意程度如何？
+<table class="table table-bordered text-center">
+   <thead>
+      <tr>
+          <th>非常同意</th>
+          <th>比较同意</th>
+          <th>一般</th>
+          <th>比较不同意</th>
+          <th>非常不同意</th>
+          <th>不知道</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><label><input type="radio" name="h1" id="h11" value="5">5</label></td>
+         <td><label><input type="radio" name="h1" id="h12" value="4">4</label></td>
+         <td><label><input type="radio" name="h1" id="h13" value="3">3</label></td>
+         <td><label><input type="radio" name="h1" id="h14" value="2">2</label></td>
+         <td><label><input type="radio" name="h1" id="h15" value="1">1</label></td>
+         <td><label><input type="radio" name="h1" id="h16" value="9">9</label></td>
+      </tr>
+   </tbody>
+</table>
+
+<li>H2.</li>总体上说，请问您对于XXX公司公平对待员工的满意程度如何? 【单选】
+<table class="table table-bordered text-center">
+   <thead>
+      <tr>
+          <th>非常同意</th>
+          <th>比较同意</th>
+          <th>一般</th>
+          <th>比较不同意</th>
+          <th>非常不同意</th>
+          <th>不知道</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+          <td><label><input type="radio" name="h2" id="h21" value="5">5</label></td>
+          <td><label><input type="radio" name="h2" id="h22" value="4">4</label></td>
+          <td><label><input type="radio" name="h2" id="h23" value="3">3</label></td>
+          <td><label><input type="radio" name="h2" id="h24" value="2">2</label></td>
+          <td><label><input type="radio" name="h2" id="h25" value="1">1</label></td>
+          <td><label><input type="radio" name="h2" id="h26" value="9">9</label></td>
+      </tr>
+   </tbody>
+</table>
+
+<li>H3.</li>总体上说，请问您对于XXX公司爱护、关心员工的满意程度如何? 【单选】
+<table class="table table-bordered text-center">
+   <thead>
+      <tr>
+          <th>非常同意</th>
+          <th>比较同意</th>
+          <th>一般</th>
+          <th>比较不同意</th>
+          <th>非常不同意</th>
+          <th>不知道</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+          <td><label><input type="radio" name="h3" id="h31" value="5">5</label></td>
+          <td><label><input type="radio" name="h3" id="h32" value="4">4</label></td>
+          <td><label><input type="radio" name="h3" id="h33" value="3">3</label></td>
+          <td><label><input type="radio" name="h3" id="h34" value="2">2</label></td>
+          <td><label><input type="radio" name="h3" id="h35" value="1">1</label></td>
+          <td><label><input type="radio" name="h3" id="h36" value="9">9</label></td>
+      </tr>
+   </tbody>
+</table>
+
+<li>H4.</li>总体上说，请问您如何看待XXX公司的发展前景? 【单选】
+<table class="table table-bordered text-center">
+   <thead>
+      <tr>
+          <th>非常好</th>
+          <th>比较好</th>
+          <th>一般</th>
+          <th>比较差</th>
+          <th>非常差</th>
+          <th>不知道</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+          <td><label><input type="radio" name="h4" id="h41" value="5">5</label></td>
+          <td><label><input type="radio" name="h4" id="h42" value="4">4</label></td>
+          <td><label><input type="radio" name="h4" id="h43" value="3">3</label></td>
+          <td><label><input type="radio" name="h4" id="h44" value="2">2</label></td>
+          <td><label><input type="radio" name="h4" id="h45" value="1">1</label></td>
+          <td><label><input type="radio" name="h4" id="h46" value="9">9</label></td>
+      </tr>
+   </tbody>
+</table>
+
+<li>H5.</li>总体上说，请问您如何看待您自己XXX公司的发展前景? 【单选】
+ <table class="table table-bordered text-center">
+    <thead>
+       <tr>
+           <th>非常好</th>
+           <th>比较好</th>
+           <th>一般</th>
+           <th>比较差</th>
+           <th>非常差</th>
+           <th>不知道</th>
+       </tr>
+    </thead>
+    <tbody>
+       <tr>
+           <td><label><input type="radio" name="h5" id="h51" value="5">5</label></td>
+           <td><label><input type="radio" name="h5" id="h52" value="4">4</label></td>
+           <td><label><input type="radio" name="h5" id="h53" value="3">3</label></td>
+           <td><label><input type="radio" name="h5" id="h54" value="2">2</label></td>
+           <td><label><input type="radio" name="h5" id="h55" value="1">1</label></td>
+           <td><label><input type="radio" name="h5" id="h56" value="9">9</label></td>
+       </tr>
+    </tbody>
+ </table>
+
+<li>H6.</li>请问，作为XXX的员工，与其他公司相比较，您对公司的看法是？
+<table class="table table-bordered text-center">
+   <thead>
+      <tr>
+          <th>最好的之一</th>
+          <th>一般</th>
+          <th>水准以上</th>
+          <th>水准以下</th>
+          <th>最差的之一</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+          <td><label><input type="radio" name="h6" id="h61" value="5">5</label></td>
+          <td><label><input type="radio" name="h6" id="h62" value="4">4</label></td>
+          <td><label><input type="radio" name="h6" id="h63" value="3">3</label></td>
+          <td><label><input type="radio" name="h6" id="h64" value="2">2</label></td>
+          <td><label><input type="radio" name="h6" id="h65" value="1">1</label></td>
+      </tr>
+   </tbody>
+</table>
+
+<li>H7.</li>与去年相比，您对XXX公司的总体满意度又有什么样的变化呢？
+<table class="table table-bordered text-center">
+   <thead>
+      <tr>
+          <th>明显提高了</th>
+          <th>有些提高</th>
+          <th>差不多</th>
+          <th>有些降低</th>
+          <th>降低的幅度很大</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td><label><input type="radio" name="h7" id="h71" value="5">5</label></td>
+         <td><label><input type="radio" name="h7" id="h72" value="4">4</label></td>
+         <td><label><input type="radio" name="h7" id="h73" value="3">3</label></td>
+         <td><label><input type="radio" name="h7" id="h74" value="2">2</label></td>
+         <td><label><input type="radio" name="h7" id="h75" value="1">1</label></td>
+      </tr>
+   </tbody>
+</table>
+
+<li>H7a.</li>【针对H3题回答为4/5的被访者】请问，您觉得是在哪些方面的改善，使您对公司的满意度有所提升呢？<br />
+回答：<input class="line-input" type="text" name="h7a">。<br />
+<li>H7b.</li>【针对H3题回答为1/2的被访者】请问，您觉得是在哪些方面的不足，使您对公司的满意度有所降低呢？<br />
+回答：<input class="line-input" type="text" name="h7b">。<br />
+<li>H8.</li> 请问，对于XXX公司，您还有什么样的意见和建议呢？<br />
+回答：<input class="line-input" type="text" name="h8">。<br />
+
+<br />
+<div class="page-header text-center">
+   <button type="submit" class="btn btn-default form-control">提交并查看统计结果</button>
+</div>
+<br />
+<div style="height: 50px"></div>
+
+<!-- <div class="page-header text-center">
+   <h3>访问结束，谢谢！</h3>
+</div> -->
+
+</form>
+
+</div>
+
+</body>
+</html>
